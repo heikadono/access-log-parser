@@ -33,7 +33,6 @@ public class Main {
                         if (length > 1024) throw new OutMaxLengthOfLineException("Lines length more than 1024");
                         if (length>maxLine) maxLine = length;
                         if (length<minLine) minLine = length;
-                        System.out.println(length);
                         lineCount++;
                     }
                     System.out.println("Общие количество строк: " + lineCount);
