@@ -26,10 +26,14 @@ public class Main {
                     int lineCount=0;
                     int maxLine = 0;
                     int minLine = reader.readLine().length();
+                    if (minLine > 1024) throw new OutMaxLengthOfLineException("Lines length more than 1024");
+                    lineCount++;
                     while ((line = reader.readLine()) != null) {
                         int length = line.length();
+                        if (length > 1024) throw new OutMaxLengthOfLineException("Lines length more than 1024");
                         if (length>maxLine) maxLine = length;
                         if (length<minLine) minLine = length;
+                        System.out.println(length);
                         lineCount++;
                     }
                     System.out.println("Общие количество строк: " + lineCount);
